@@ -28,10 +28,21 @@ body{
     background-color: #E94D30;
     padding: 2em 0;
 }
+#footer p {
+    padding: 0 1em;
+}
+#footer div p:first-child {
+    border-right: 1px solid black;
+}
 #footer div a {
     color: #E5E5E5;
     text-decoration: none;
 }
 .navbar-toggler:focus {
     outline: none !important;
+}
+@media screen and (max-width: 575.98px) {
+    #main section header {
+        font-size:1.5em;
+    }
 }
