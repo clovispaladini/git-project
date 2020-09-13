@@ -55,7 +55,7 @@ body{
 }
 #footer {
     background-color: #E94D30;
-    padding: 2em 0;
+    padding: 2em 0 0.5em;
 }
 #footer p {
     padding: 0 1em;
@@ -63,9 +63,12 @@ body{
 #footer div p:first-child {
     border-right: 1px solid black;
 }
-#footer div a {
-    color: #E5E5E5;
-    text-decoration: none;
+.footer-p {
+    text-align: center;
+    margin-top: 1em;
+}
+.logo-github-footer {
+    width: 30px;
 }
 .navbar-toggler:focus {
     outline: none !important;
@@ -75,13 +78,13 @@ body{
         font-size:1.5em;
     }
     .git-history, .git-definition {
-        padding: 3em 2em;
+        padding: 3em 1em;
     }
     #main-start {
-        padding: 2em;
+        padding: 2em 1em;
     }
     .footer-section {
         text-align: center;
-        padding: 0 2em 3em;
+        padding: 0 1em 3em;
     }
 }
