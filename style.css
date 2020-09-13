@@ -17,12 +17,20 @@ body{
 #main section header img {
     width: 50%;
 }
-.em-breve {
+.git-history {
     background-color: #191919;
-    color: white;
-    font-size: 2em;
-    height: 4em; 
-    padding: 3em 0;
+    color: #E5E5E5;
+    padding: 4em;
+}
+.git-definition {
+    padding: 4em 4em 3em;
+}
+.popper-span {
+    font-weight: bold;
+}
+.footer-section {
+    text-align: center;
+    padding: 0 3em 3em;
 }
 #footer {
     background-color: #E94D30;
@@ -44,5 +52,12 @@ body{
 @media screen and (max-width: 575.98px) {
     #main section header {
         font-size:1.5em;
+    }
+    .git-history, .git-definition {
+        padding: 3em 2em;
+    }
+    .footer-section {
+        text-align: center;
+        padding: 0 2em 3em;
     }
 }
