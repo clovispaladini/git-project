@@ -1,0 +1,37 @@
+body{
+    background-color: #F1F1F1;
+}
+#nav {
+    background-color: rgb(233,77,48);
+}
+#nav .logo-nav {
+    background-color: #F1F1F1;
+    width: 150px;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+#main section header {
+    font-size: 2em;
+    padding: 2em 0;
+}
+#main section header img {
+    width: 50%;
+}
+.em-breve {
+    background-color: #191919;
+    color: white;
+    font-size: 2em;
+    height: 4em; 
+    padding: 3em 0;
+}
+#footer {
+    background-color: #E94D30;
+    padding: 2em 0;
+}
+#footer div a {
+    color: #E5E5E5;
+    text-decoration: none;
+}
+.navbar-toggler:focus {
+    outline: none !important;
+}
