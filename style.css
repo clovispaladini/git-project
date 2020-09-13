@@ -17,6 +17,15 @@ body{
 #main section header img {
     width: 50%;
 }
+#main-start {
+    padding: 2em 3em;
+}
+#main-start h2 {
+    margin: 1em 0 0.5em;
+}
+#main-start h4 {
+    margin: 2em 0 1em;
+}
 .git-history {
     background-color: #191919;
     color: #E5E5E5;
@@ -27,6 +36,18 @@ body{
 }
 .popper-span {
     font-weight: bold;
+}
+.text-violet {
+    color: violet;
+}
+.text-green {
+    color: lightgreen;
+}
+.text-yellow {
+    color: yellow;
+}
+.text-blue {
+    color: lightblue;
 }
 .footer-section {
     text-align: center;
@@ -55,6 +76,9 @@ body{
     }
     .git-history, .git-definition {
         padding: 3em 2em;
+    }
+    #main-start {
+        padding: 2em;
     }
     .footer-section {
         text-align: center;

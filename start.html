@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="theme-color" content="#e94d30">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#e94d30">
+    <meta name="description" content="Git é um sistema de controle de versão. Clique aqui para saber mais.">
+    <meta name="keywords" content="git, github, sistema, controle, versao, versão, desenvolvedor, web, developer">
+    <meta name="author" content="Clovis Paladini">
+    <meta name="robots" content="index, follow"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+    <title>Git Project</title>
+</head>
+<body>
+    <header>
+        <nav id="nav" class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="./">
+                <img src="img/logo-nav.png" class="d-inline-block align-top logo-nav" alt="">
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="start.html">Iniciando</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main-start">
+        <section>
+            <div>
+                <h2>O software:</h2>
+                <p>Para adquirir o software, com versões para Mac OS, Windows e Linux/Unix, basta baixar o Git gratuitamente no site ofifial - <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a></p>
+                <p>Após o programa ser instalado, executar o terminal <strong>Git Bash</strong>.</p>
+            </div>
+            <div>
+                <h2>Configuração inicial</h2>
+                <p>Vamos começar a configurar o Git. Com o terminal do Git Bash aberto, siga as instruções abaixo:</p>
+                <h4>Verificar a instalação do Git</h4>
+                <p>Agora vamos iniciar a configurar o Git. O primeiro comando a ser executado é o <kbd>git</kbd>, com ele veremos se a instalação ocorreu normalmente e se o Git esta pronto para ser inicializado. Se tudo ocorreu bem, ira aparecer uma mensagem parecida com o exemplo abaixo:</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ git
+    usage: git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
+        [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
+        [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+        [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+        &lt;command&gt; [&lt;args&gt;]
+
+    These are common Git commands used in various situations:
+
+    start a working area (see also: git help tutorial)
+    clone             Clone a repository into a new directory
+    init              Create an empty Git repository or reinitialize an existing one
+
+    work on the current change (see also: git help everyday)
+    add               Add file contents to the index
+    mv                Move or rename a file, a directory, or a symlink
+    restore           Restore working tree files
+    rm                Remove files from the working tree and from the index
+    sparse-checkout   Initialize and modify the sparse-checkout
+
+    examine the history and state (see also: git help revisions)
+    bisect            Use binary search to find the commit that introduced a bug
+    diff              Show changes between commits, commit and working tree, etc
+    grep              Print lines matching a pattern
+    log               Show commit logs
+    show              Show various types of objects
+    status            Show the working tree status
+
+    grow, mark and tweak your common history
+    branch            List, create, or delete branches
+    commit            Record changes to the repository
+    merge             Join two or more development histories together
+    rebase            Reapply commits on top of another base tip
+    reset             Reset current HEAD to the specified state
+    switch            Switch branches
+    tag               Create, list, delete or verify a tag object signed with GPG
+
+    collaborate (see also: git help workflows)
+    fetch             Download objects and refs from another repository
+    pull              Fetch from and integrate with another repository or a local branch
+    push              Update remote refs along with associated objects
+
+    'git help -a' and 'git help -g' list available subcommands and some
+    concept guides. See 'git help &lt;command&gt;' or 'git help &lt;concept&gt;'
+    to read about a specific subcommand or concept.
+    See 'git help git' for an overview of the system.
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $
+    </code>
+</pre>
+                <p>Com o programa instalado corretamente, seguiremos para o próximo passo.</p>
+                <h4>Configurar o seu nome no Git</h4>
+                <p>Com o comando <kbd>git config --global user.name "Seu Nome"</kbd> cadastramos o nome do desenvolvedor no Git.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ git config --global user.name "Fernando Machado"
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ 
+    </code>
+</pre>
+                <h4>Configurar o seu email no Git</h4>
+                <p>Com o comando <kbd>git config --global user.email "seu.email@gmail.com"</kbd> cadastramos o email do desenvolvedor.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ git config --global user.email "seu.email@gmail.com"
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ 
+    </code>
+</pre>
+                <h4>Habilitar as cores no terminal do Git Bash</h4>
+                <p>Com o comando <kbd>git config --global color.ui true</kbd> habilitamos as cores no terminal do Git.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ git config --global color.ui true
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ 
+    </code>
+</pre>
+                <h4>Iniciar o Git no repositório do projeto</h4>
+                <p>Após ser efetuada as configurações iniciais, agora vamos efetivamente instalar o git no repositório do projeto.</p>
+                <p><strong>Dicas iniciais:</strong></p>
+                <ul>
+                    <li class="m-1">Comando <kbd>ls</kbd> lista as pastas do repositório.</li>
+                    <li class="m-1">Comando <kbd>cd pasta</kbd> entra no diretório.</li>
+                    <li class="m-1">Comando <kbd>cd</kbd> volta para o diretório raiz.</li>
+                    <li class="m-1">Comando <kbd>clear</kbd> limpa a tela do terminal.</li>
+                    <li class="m-1">Comando <kbd>exit</kbd> fecha o terminal do Git Bash.</li>
+                    <li class="m-1">Digitando as primeiras letras e clicando a tecla <code class="bg-light p-1">tab</code> irá retornar o diretório com nome inicial dessas letras.</li>
+                </ul>
+                <h5>Acessando a pasta raiz do projeto</h5>
+                <p>Iremos iniciar a configurar o Git. Nos exemplos que serão mostrados a partir de agora, a pasta raiz do projeto que será controlado está em uma pasta chamada 'git-project' na área de trabalho do meu computador. Vamos acessar este diretório conforme o exemplo abaixo:</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~</span>
+    $ cd Desktop
+    
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ cd git-project
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span>
+    $ 
+    </code>
+</pre>
+                <p>Dentro do diretório do projeto, executar o comando <kbd>git init</kbd>.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span>
+    $ git init
+    Initialized empty Git repository in C:/Users/Desktop/git-project/.git/
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $
+    </code>
+</pre>
+                <p><strong>Pronto</strong>. O primeiro passo foi dado... a partir de agora, tudo que for modificado dentro do repositório 'git-project' será controlado pelo sistema Git.</p>
+                <p>Percebeu que o repositório ganhou status de 'master'? Iremos entender estes status nas próximas páginas.</p>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="d-flex justify-content-center align-items-center">
+            <p>Projeto desenvolvido por Clovis Paladini</p><p><a href="https://www.clovispaladini.com" target="_blank">clovispaladini.com</a></p>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js.js"></script> 
+</body>
+</html>
