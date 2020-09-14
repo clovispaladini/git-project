@@ -10,29 +10,32 @@ body{
     border-radius: 5px;
     padding: 0.5em;
 }
-#main section header {
+.navbar-toggler:focus {
+    outline: none !important;
+}
+#main-index section header {
     font-size: 2em;
     padding: 2em 0;
 }
-#main section header img {
+#main-index section header img {
     width: 50%;
 }
-#main-start {
-    padding: 2em 3em;
-}
-#main-start h2 {
-    margin: 1em 0 0.5em;
-}
-#main-start h4 {
-    margin: 2em 0 1em;
-}
-.git-history {
+#main-index .git-history {
     background-color: #191919;
     color: #E5E5E5;
     padding: 4em;
 }
-.git-definition {
+#main-index .git-definition {
     padding: 4em 4em 3em;
+}
+#main {
+    padding: 2em 3em;
+}
+#main h2 {
+    margin: 1em 0 0.5em;
+}
+#main h4 {
+    margin: 2em 0 1em;
 }
 .popper-span {
     font-weight: bold;
@@ -49,9 +52,9 @@ body{
 .text-blue {
     color: lightblue;
 }
-.footer-section {
+#main-index .footer-section {
     text-align: center;
-    padding: 0 3em 3em;
+    padding: 0 4em 3em;
 }
 #footer {
     background-color: #E94D30;
@@ -70,21 +73,17 @@ body{
 .logo-github-footer {
     width: 30px;
 }
-.navbar-toggler:focus {
-    outline: none !important;
-}
 @media screen and (max-width: 768px) {
-    #main section header {
+    #main-index section header {
         font-size:1.5em;
     }
-    .git-history, .git-definition {
-        padding: 3em 1em;
-    }
-    #main-start {
+    #main {
         padding: 2em 1em;
     }
-    .footer-section {
-        text-align: center;
+    #main-index .git-history, #main-index .git-definition {
+        padding: 3em 1em;
+    }
+    #main-index .footer-section {
         padding: 0 1em 3em;
     }
 }
