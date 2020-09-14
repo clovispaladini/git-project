@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="theme-color" content="#e94d30">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#e94d30">
+    <meta name="description" content="Git é um sistema de controle de versão. Clique aqui para saber mais.">
+    <meta name="keywords" content="git, github, sistema, controle, versao, versão, desenvolvedor, web, developer">
+    <meta name="author" content="Clovis Paladini">
+    <meta name="robots" content="index, follow"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+    <title>Git Project</title>
+</head>
+<body>
+    <header>
+        <nav id="nav" class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="./">
+                <img src="img/logo-nav.png" class="d-inline-block align-top logo-nav" alt="">
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="start.html">Iniciando</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="clone.html">Clonar repositório</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="primeiro-commit.html">Primeiro commit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="commit.html">Commit</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <section>
+            <div>
+                <h2>Os principais estágios de um commit:</h2>
+                <p>Um arquivo comitado é um arquivo que efetivamente entrou no controle de versão, porém para que o arquivo possua este status, é necessário verificar seu estágio, que poderá ser:</p>
+                <ol>
+                    <li>Untracked files;</li>
+                    <li>Changes to be committed;</li>
+                    <li>Nothing to commit / committed;</li>
+                    <li>Changes not staged for commit;</li>
+                </ol>
+            </div>
+            <div>
+                <h4>Verificar o status de um arquivo</h4>
+                <p>O comando <kbd>git status</kbd> retorna uma lista indicando em qual estágio cada arquivo do diretório está.</p>
+                <h5>Untracked files</h5>
+                <p>Continuando o exemplo anterior, vamos listar os arquivos do diretório e verificar seu status.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ ls
+    <span class="text-blue">index.html</span>  
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git status
+    On branch master
+
+    No commits yet
+
+    Untracked files:
+        (use "git add &lt;file&gt;..." to include in what will be committed)
+            <span class="text-danger">index.html</span>
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $
+    </code>
+</pre>
+                <p>Acima verificamos que o arquivo 'index.html' está no primeiro estario, <strong>'Untracked file'</strong>, isto é, este arquivo ainda não foi adcionado ao controle de versão, ele esta dentro do diretório onde foi inicializado o Git porem não esta sob o comando do controle de versão.</p>
+                <h5>Changes to be committed</h5>
+                <p>Para que o arquivo começe a fazer parte do controle de versão usaremos o comando <kbd>git add index.html</kbd>. Obs: Para adicionar vários arquivos de uma só vez, usar o comando <kbd>git add .</kbd>.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git add index.html
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ 
+    </code>
+</pre>
+                <p>Agora o arquivo esta fazendo parte do controle de versão, e novamente usaremos o comando <kbd>git status</kbd> e veremos que o arquivo passou para o segundo estágio, onde esta pronto para ser comitado.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git status
+    On branch master
+
+    No commits yet
+
+    Changes to be committed:
+        (use "git rm --cached &lt;file&gt;..." to unstage)
+            <span class="text-green">new file: index.html</span>
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ 
+    </code>
+</pre>  
+                <h5>Nothing to commit / committed</h5>
+                <p>Um arquivo comitado é um arquivo que entra efetivamente no controle de versao, onde no momento do <code class="bg-light p-1">commit</code> o Git gera uma identificação desse <code class="bg-light p-1">commit</code> e de quando este arquivo foi comitado.</p>
+                <p>O comando <kbd>git commit -m "Meu primeiro commit"</kbd> irá comitar o arquivo, finalizando o processo de 'commit' e salvando as informações de 'log' deste arquivo.</p>
+    <pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git commit -m "Meu primeiro commit"
+    [master (root-commit) 0cab48c] Meu primeiro commit
+     1 file changed, 10 insertions(+)
+     create mode 100644 index.html
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ 
+    </code>
+</pre>
+                <p>Agora o arquivo esta comitado, com <kbd>git status</kbd> veremos que o repositório não tem mais arquivos fora do sistema de versão.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git status
+    On branch master
+    nothing to commit, working tree clean
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ 
+    </code>
+</pre>         
+                <h5>Changes not staged for commit</h5>
+                <p>Quando um arquivo que esta sob o controle de versão e seu conteúdo é alterado, como a inserção de uma linha de código por exemplo, este arquivo tem que ser comitado novamente e irá passar pelos mesmos processos listados acima.</p>
+                <p>No arquivo do exemplo (index.html) foi realizada a alteração de um ponto final para ponto de exclamação em um parágrafo na frase. Novamente o comando <kbd>git status</kbd> irá retornar o statos do repositório.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git status
+    On branch master
+    Changes not staged for commit:
+        (use "git add &lt;file&gt;..." to update what will be committed)
+        (use "git restore &lt;file&gt;..." to discard changes in working directory)
+            <span class="text-danger">modified: index.html</span>
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ 
+    </code>
+</pre>     
+                <p>Acima, o Git esta informando que o arquivo foi modificado, reparem que ele nos da a possibilidade de adicionar este arquivo ao controle de versão com o comando <kbd>git add &lt;file&gt;...</kbd>, ou tambem podemos voltar este arquivo a versão anterior, antes da alteração quando ele estava comitado, com o comando <kbd>git restore &lt;file&gt;...</kbd>.</p>
+                <p>Como a intenção é comitar novamente este arquivo que foi alterado, usaremos os comandos que já vimos anteriormente para adcionar o arquivo no sistema de versão e comitar este mesmo arquivo.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git add index.html
+    
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git status
+    On branch master
+    Changes to be committed:
+        (use "git restore --staged &lt;file&gt;..." to unstage)
+            <span class="text-green">modified: index.html</span>
+    
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git commit -m "Alterado ponto no final da frase no arquivo index.html"
+    [master 15dfdd3] Alterado ponto no final da frase no arquivo index.html
+     1 file changed, 1 insertion(+), 1 deletion(-)
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git status
+    On branch master
+    nothing to commit, working tree clean
+    </code>
+</pre>              
+                <p>Agora o arquivo foi novamente comitado e o Git esta informando que não tem mais nenhum arquivo pendente no sistema de versão</p>
+                <p>Então vimos os primcipais estágios de um <code class="bg-light p-1">commit</code> no Git e para finalizar esta parte e entendermos melhor os commits, vamos usar o comando <kbd>init log</kbd> e visualizar os logs dos commits que efetuamos.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ git log
+    <span class="text-yellow">commit 15dfdd3d1ae85895a7dae9fd8198aa59d63bd100 (<span class="text-blue">HEAD -></span> <span class="text-green">master</span>)</span>
+    Author: Fernando Machado &lt;seu.email@gmail.com&gt;
+    Date:   Mon Sep 01 12:59:47 2020 -0300
+
+        Alterado ponto no final da frase no arquivo index.html
+
+    <span class="text-yellow">commit 0cab48c62cb583b6bac1fa177de0f4e0cd71c138</span>
+    Author: Fernando Machado &lt;seu.email@gmail.com&gt;
+    Date:   Mon Sep 01 12:28:26 2020 -0300
+
+        Meu primeiro commit
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $ 
+    </code>
+</pre>                
+                <p>Na informação do 'log' temos no cabeçário um código único que identifica o <code class="bg-light p-1">commit</code>, após temos a identificação do autor do <code class="bg-light p-1">commit</code>, seu email e a data em que o arquivo foi comitado. Por último aparece a mensagem que foi registrada no momento do commit do arquivo.</p>
+                <p>Agora veremos outro meio de comitar um arquivo no sistema de versao, <a href="commit.html">Clique aqui</a> para avançar.</p>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="d-flex justify-content-center align-items-center">
+            <p>Projeto desenvolvido por Clovis Paladini</p><p><a href="https://www.clovispaladini.com" class="text-white" target="_blank">clovispaladini.com</a></p>
+        </div>
+        <p class="footer-p">
+            <img class="logo-github-footer" src="img/github.svg" alt="Logotipo Github"> <a href="https://github.com/clovispaladini/git-project" class="text-light" target="_blank">visualizar o projeto no Github</a>
+        </p>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js.js"></script> 
+</body>
+</html>

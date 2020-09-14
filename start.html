@@ -34,6 +34,12 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="clone.html">Clonar repositório</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="primeiro-commit.html">Primeiro commit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="commit.html">Commit</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -142,10 +148,15 @@
                 <p>Após ser efetuada as configurações iniciais, agora vamos efetivamente instalar o git no repositório do projeto.</p>
                 <p><strong>Dicas iniciais:</strong></p>
                 <ul>
-                    <li class="m-1">Comando <kbd>ls</kbd> lista as pastas do repositório.</li>
+                    <li class="m-1">Comando <kbd>ls</kbd> lista os arquivos e pastas do repositório.</li>
+                    <li class="m-1">Comando <kbd>ls -la</kbd> lista os arquivos e pastas ocultas.</li>
                     <li class="m-1">Comando <kbd>cd pasta</kbd> entra no diretório.</li>
                     <li class="m-1">Comando <kbd>cd</kbd> volta para o diretório raiz.</li>
-                    <li class="m-1">Comando <kbd>rm -rf diretorio/</kbd> apaga todo diretório.</li>
+                    <li class="m-1">Comando <kbd>touch arquivo.txt</kbd> cria um arquivo txt.</li>
+                    <li class="m-1">Comando <kbd>vim arquivo.txt</kbd> abre o arquivo para edição.</li>
+                    <li class="m-1">Tecla <kbd>esc</kbd> + comando <kbd>:wq</kbd> + tecla <kbd>enter</kbd> Salva e fecha o arquivo aberto no vim.</li>
+                    <li class="m-1">Comando <kbd>mkdir nome-diretorio</kbd> cria um diretório.</li>
+                    <li class="m-1">Comando <kbd>rm -rf nome-diretorio/</kbd> apaga todo diretório.</li>
                     <li class="m-1">Comando <kbd>clear</kbd> limpa a tela do terminal.</li>
                     <li class="m-1">Comando <kbd>exit</kbd> fecha o terminal do Git Bash.</li>
                     <li class="m-1">Digitando as primeiras letras e clicando a tecla <code class="bg-light p-1">tab</code> irá retornar o diretório com nome inicial dessas letras.</li>
@@ -164,7 +175,7 @@
     $ 
     </code>
 </pre>
-                <h5>Iniciando o Git</h5>
+                <h5>Iniciando o Git no repositório</h5>
                 <p>Dentro do diretório do projeto, executar o comando <kbd>git init</kbd>.</p>
 <pre class="bg-dark text-light">
     <code>
@@ -176,7 +187,8 @@
     $
     </code>
 </pre>
-                <p><strong>Pronto</strong>. O primeiro passo foi dado... a partir de agora, tudo que for modificado dentro do repositório 'git-project' será controlado pelo sistema Git.</p>
+                <p><strong>Pronto</strong>. Dentro do diretório foi criado uma pasta oculta chamada '.git' e a partir de agora, tudo que for modificado dentro do repositório 'git-project' poderá ser controlado pelo sistema Git.</p>
+                <p>Próximo passo é começar a verificar e manipular os estágios de um <code class="bg-light p-1">commit</code> dos arquivos dentro do repositório, para que eles comecem a ser controlados pelo controle de versão. <a href="status.html">Clique aqui</a> para saber mais.</p>
                 <p>Podemos também clonar um repositório com um projeto em andamento. <a href="clone.html">Clique aqui</a> e veja como realizar um clone de um projeto no Github.</p>
             </div>
         </section>
