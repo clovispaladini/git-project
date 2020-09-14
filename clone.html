@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="theme-color" content="#e94d30">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#e94d30">
+    <meta name="description" content="Git é um sistema de controle de versão. Clique aqui para saber mais.">
+    <meta name="keywords" content="git, github, sistema, controle, versao, versão, desenvolvedor, web, developer">
+    <meta name="author" content="Clovis Paladini">
+    <meta name="robots" content="index, follow"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+    <title>Git Project</title>
+</head>
+<body>
+    <header>
+        <nav id="nav" class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="./">
+                <img src="img/logo-nav.png" class="d-inline-block align-top logo-nav" alt="">
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="start.html">Iniciando</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="clone.html">Clonar repositório</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main-start">
+        <section>
+            <div>
+                <h2>Clonar um repositório do Github:</h2>
+                <p>Podemos realizar uma cópia de arquivos do Github para o nosso sistema Git. Chamamos essa ação de clone do repositório.</p>
+            </div>
+            <div>
+                <h4>Clone com HTTPS</h4>
+                <p>No site do Github copie a url do repositório que deseja clonar. neste exemplo usarei o link deste projeto <code class="bg-light p-1">https://github.com/clovispaladini/git-project.git</code>.</p>
+                <p>O comando <kbd>git clone https://...</kbd> irá realizar a cópia do repositório com o nome do projeto.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ git clone https://github.com/clovispaladini/git-project.git   
+    Cloning into 'git-project'...
+    remote: Enumerating objects: 28, done.
+    remote: Counting objects: 100% (28/28), done.
+    remote: Compressing objects: 100% (20/20), done.
+    remote: Total 28 (delta 9), reused 27 (delta 8), pack-reused 0
+    Receiving objects: 100% (28/28), 15.56 KiB | 1.11 MiB/s, done.
+    Resolving deltas: 100% (9/9), done.
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ ls
+    <span class="text-blue">git-project/</span>  
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ cd git-project
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/git-project</span> <span class="text-blue">(master)</span>
+    $
+    </code>
+</pre>
+                <h5>Personalizando o nome do repositório</h5>
+                <p>O comando <kbd>git clone https://... nome-do-repositorio</kbd> irá realizar a cópia do repositório com um nome personalizado.</p>
+<pre class="bg-dark text-light">
+    <code>
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ git clone https://github.com/clovispaladini/git-project.git projeto-git   
+    Cloning into 'projeto-git'...
+    remote: Enumerating objects: 28, done.
+    remote: Counting objects: 100% (28/28), done.
+    remote: Compressing objects: 100% (20/20), done.
+    remote: Total 28 (delta 9), reused 27 (delta 8), pack-reused 0
+    Receiving objects: 100% (28/28), 15.56 KiB | 1.11 MiB/s, done.
+    Resolving deltas: 100% (9/9), done.
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ ls
+    <span class="text-blue">projeto-git/</span>  
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop</span>
+    $ cd projeto-git
+
+    <span class="text-green">usu@HOST</span> <span class="text-violet">MINGW64</span> <span class="text-yellow">~/Desktop/projeto-git</span> <span class="text-blue">(master)</span>
+    $
+    </code>
+</pre>
+                <p>Agora temos uma cópia de um projeto do Github em nosso repositório local.</p>
+                <p>Próximo passo é começar a verificar e manipular os 'status' dos arquivos dentro do repositório. <a href="status.html">Clique aqui</a> para saber mais.</p>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="d-flex justify-content-center align-items-center">
+            <p>Projeto desenvolvido por Clovis Paladini</p><p><a href="https://www.clovispaladini.com" class="text-white" target="_blank">clovispaladini.com</a></p>
+        </div>
+        <p class="footer-p">
+            <img class="logo-github-footer" src="img/github.svg" alt="Logotipo Github"> <a href="https://github.com/clovispaladini/git-project" class="text-light" target="_blank">visualizar o projeto no Github</a>
+        </p>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js.js"></script> 
+</body>
+</html>

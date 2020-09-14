@@ -73,7 +73,7 @@ body{
 .navbar-toggler:focus {
     outline: none !important;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 768px) {
     #main section header {
         font-size:1.5em;
     }
